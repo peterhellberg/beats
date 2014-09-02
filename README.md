@@ -12,7 +12,7 @@ $ go get -u github.com/peterhellberg/beats
 
 ## Usage
 
-```golang
+```go
 package main
 
 import (
