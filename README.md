@@ -26,6 +26,19 @@ func main() {
 }
 ```
 
+## Commands
+
+### beats-gui
+
+![beats-gui](http://assets.c7.se/skitch/beats-gui-20140902-222030.png)
+
+### beats
+
+```bash
+$ ./beats
+@890
+```
+
 ## LICENSE
 
 Copyright (c) 2014 [Peter Hellberg](http://c7.se/)
