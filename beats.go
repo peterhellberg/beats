@@ -1,3 +1,27 @@
+/*
+
+A package for all your Swatch Internet Time needs.
+
+http://en.wikipedia.org/wiki/Swatch_Internet_Time
+
+Installation
+
+    go get -u github.com/peterhellberg/beats
+
+Usage
+
+		package main
+
+		import (
+			"fmt"
+
+			"github.com/peterhellberg/beats"
+		)
+
+		func main() {
+			fmt.Println(beats.NowString())
+		}
+*/
 package beats
 
 import (
