@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	l = ui.NewStandaloneLabel("Time in beats:")
+	l = ui.NewLabel("Time in beats:")
 	w = ui.NewWindow("Beats GUI", 205, 24, l)
 )
 
