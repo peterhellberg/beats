@@ -1,6 +1,6 @@
 /*
 
-A package for all your Swatch Internet Time needs.
+Package beats for all your Swatch Internet Time needs.
 
 http://en.wikipedia.org/wiki/Swatch_Internet_Time
 
