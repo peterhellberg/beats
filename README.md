@@ -30,7 +30,7 @@ func main() {
 
 ### beats-gui
 
-![beats-gui](http://assets.c7.se/skitch/beats-gui-20140902-222030.png)
+![beats-gui](https://assets.c7.se/skitch/beats-gui-20140902-222030.png)
 
 ### beats
 
