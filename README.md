@@ -34,9 +34,20 @@ func main() {
 
 ### beats
 
-```bash
-$ ./beats
-@890
+```none
+Usage: beats [<timestamp>]
+
+Arguments:
+  [<timestamp>]
+          Unix timestamp to convert to .beat time
+
+Examples:
+
+$ beats
+@456
+
+$ beats 1732500000
+@125
 ```
 
 ## LICENSE
