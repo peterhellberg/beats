@@ -7,7 +7,7 @@ For all your [Swatch Internet Time](http://en.wikipedia.org/wiki/Swatch_Internet
 ## Installation
 
 ```bash
-$ go get -u github.com/peterhellberg/beats
+$ go install github.com/peterhellberg/beats/cmd/beats@master
 ```
 
 ## Usage
