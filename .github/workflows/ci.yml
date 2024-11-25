@@ -1,0 +1,43 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo .github/workflows/install-deps.sh
+
+    - name: Test
+      run: |
+        go test
+
+  mac:
+    runs-on: macos-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        .github/workflows/install-deps.sh
+
+    - name: Build and test
+      run: |
+        go test
+
+  windows:
+    runs-on: windows-latest
+    steps:
+    - name: 'Disable `autocrlf` in Git'
+      run: git config --global core.autocrlf false
+
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Test
+      run: |
+        go test
