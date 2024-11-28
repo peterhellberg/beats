@@ -4,13 +4,15 @@ For all your [Swatch Internet Time](http://en.wikipedia.org/wiki/Swatch_Internet
 
 [![GoDoc](https://godoc.org/github.com/peterhellberg/beats?status.png)](https://godoc.org/github.com/peterhellberg/beats)
 
-## Installation
+## Library
+
+### Download
 
 ```bash
-$ go get -u github.com/peterhellberg/beats
+go get -u github.com/peterhellberg/beats
 ```
 
-## Usage
+### Use example
 
 ```go
 package main
@@ -30,13 +32,40 @@ func main() {
 
 ### beats-gui
 
-![beats-gui](https://assets.c7.se/skitch/beats-gui-20140902-222030.png)
+#### Installation
+
+```bash
+go install github.com/peterhellberg/beats/cmd/beats-gui@master
+```
+
+#### Screenshot
+
+![macOS screenshot of beats-gui.](assets/beats-gui-screenshot.png)
 
 ### beats
 
+#### Installation
+
 ```bash
-$ ./beats
-@890
+go install github.com/peterhellberg/beats/cmd/beats@master
+```
+
+#### Usage
+
+```none
+Usage: beats [<timestamp>]
+
+Arguments:
+  [<timestamp>]
+          Unix timestamp to convert to .beat time
+
+Examples:
+
+$ beats
+@456
+
+$ beats 1732500000
+@125
 ```
 
 ## LICENSE

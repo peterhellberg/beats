@@ -8,35 +8,35 @@ import (
 	"github.com/peterhellberg/beats"
 )
 
-var (
-	l = ui.NewLabel("Time in beats:")
-	w = ui.NewWindow("Beats GUI", 205, 24, l)
-)
-
 func main() {
-	go ui.Do(initGUI)
+	err := ui.Main(func() {
+		w := ui.NewWindow("Beats GUI", 205, 24, false)
+		w.SetMargined(true)
 
-	go func() {
-		c := time.Tick(500 * time.Millisecond)
+		l := ui.NewLabel("Time in beats:")
+		w.SetChild(l)
 
-		for now := range c {
-			l.SetText(timeInBeatsString(now))
-		}
-	}()
+		w.OnClosing(func(*ui.Window) bool {
+			ui.Quit()
+			return true
+		})
 
-	err := ui.Go()
+		go func() {
+			ticker := time.NewTicker(500 * time.Millisecond)
+			defer ticker.Stop()
+
+			for now := range ticker.C {
+				ui.QueueMain(func() {
+					l.SetText(timeInBeatsString(now))
+				})
+			}
+		}()
+
+		w.Show()
+	})
 	if err != nil {
 		panic(err)
 	}
-}
-
-func initGUI() {
-	w.OnClosing(func() bool {
-		ui.Stop()
-		return true
-	})
-
-	w.Show()
 }
 
 func timeInBeatsString(t time.Time) string {
